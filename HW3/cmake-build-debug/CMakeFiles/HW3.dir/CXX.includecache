@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zym/Desktop/CS411/HW3/inversions.hpp
+vector
+-
+cstddef
+-
+algorithm
+-
+iterator
+-
+type_traits
+-
+
+/home/zym/Desktop/CS411/HW3/inversions_test.cpp
+inversions.hpp
+/home/zym/Desktop/CS411/HW3/inversions.hpp
+inversions.hpp
+/home/zym/Desktop/CS411/HW3/inversions.hpp
+iostream
+-
+string
+-
+stdexcept
+-
+vector
+-
+deque
+-
+cstddef
+-
+

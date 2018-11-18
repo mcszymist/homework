@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zym/Desktop/CS411/HW5/build.cpp
+build.hpp
+/home/zym/Desktop/CS411/HW5/build.hpp
+iostream
+-
+utility
+-
+
+/home/zym/Desktop/CS411/HW5/build.hpp
+vector
+-
+

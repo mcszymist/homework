@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -g   CMakeFiles/HW3.dir/contigsum_test.cpp.o CMakeFiles/HW3.dir/inversions_test.cpp.o  -o HW3 

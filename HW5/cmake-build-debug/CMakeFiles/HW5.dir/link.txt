@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -g   CMakeFiles/HW5.dir/build.cpp.o CMakeFiles/HW5.dir/build_test2.cpp.o  -o HW5 
