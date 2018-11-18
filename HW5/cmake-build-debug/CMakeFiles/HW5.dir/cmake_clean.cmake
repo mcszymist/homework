@@ -1,8 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/HW5.dir/build.cpp.o"
-  "CMakeFiles/HW5.dir/build_test2.cpp.o"
+  "CMakeFiles/HW5.dir/build.cpp.obj"
+  "CMakeFiles/HW5.dir/build_test2.cpp.obj"
   "HW5.pdb"
-  "HW5"
+  "HW5.exe"
+  "HW5.exe.manifest"
+  "libHW5.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

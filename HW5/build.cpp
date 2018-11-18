@@ -6,11 +6,8 @@ using std::endl;
 #include <utility>
 using std::pair;
 using std::make_pair;
-int build(int w, int e, const vector<Bridge> &bridges){
-    if(bridges.size()==0){
-        return 0;
-    }
-    vector<Bridge> stack = bridges;
+
+void cleanBridges(vector<Bridge> &stack){
     for(size_t i = 0;i<stack.size();i++){
         for(size_t ii = i;ii< stack.size();) {
             if (stack[i][0] == stack[ii][0] && stack[i][1] == stack[ii][1] && !i==ii) {
@@ -24,7 +21,8 @@ int build(int w, int e, const vector<Bridge> &bridges){
             }
         }
     }
-    int max = 0;
+}
+void addNullified(vector<Bridge> &stack){
     for(size_t i = 0;i<stack.size();i++){
         int nullMax = 0;
         for(size_t ii = 0;ii< stack.size();ii++){
@@ -38,6 +36,17 @@ int build(int w, int e, const vector<Bridge> &bridges){
         nullMax = stack[i][2] - nullMax;
         stack[i].push_back(nullMax);
     }
+}
+
+int build(int w, int e, const vector<Bridge> &bridges){
+    if(bridges.size()==0){
+        return 0;
+    }
+    vector<Bridge> stack = bridges;
+    cleanBridges(stack);
+    addNullified(stack);
+    int max = 0;
+
     while(true){
         int pos = -1;
         int holdMax = -214748364;
