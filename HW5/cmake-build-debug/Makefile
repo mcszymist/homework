@@ -122,33 +122,6 @@ HW5/fast:
 	$(MAKE) -f CMakeFiles\HW5.dir\build.make CMakeFiles/HW5.dir/build
 .PHONY : HW5/fast
 
-build.obj: build.cpp.obj
-
-.PHONY : build.obj
-
-# target to build an object file
-build.cpp.obj:
-	$(MAKE) -f CMakeFiles\HW5.dir\build.make CMakeFiles/HW5.dir/build.cpp.obj
-.PHONY : build.cpp.obj
-
-build.i: build.cpp.i
-
-.PHONY : build.i
-
-# target to preprocess a source file
-build.cpp.i:
-	$(MAKE) -f CMakeFiles\HW5.dir\build.make CMakeFiles/HW5.dir/build.cpp.i
-.PHONY : build.cpp.i
-
-build.s: build.cpp.s
-
-.PHONY : build.s
-
-# target to generate assembly for a file
-build.cpp.s:
-	$(MAKE) -f CMakeFiles\HW5.dir\build.make CMakeFiles/HW5.dir/build.cpp.s
-.PHONY : build.cpp.s
-
 build_test2.obj: build_test2.cpp.obj
 
 .PHONY : build_test2.obj
@@ -185,9 +158,6 @@ help:
 	@echo ... HW5
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... build.obj
-	@echo ... build.i
-	@echo ... build.s
 	@echo ... build_test2.obj
 	@echo ... build_test2.i
 	@echo ... build_test2.s

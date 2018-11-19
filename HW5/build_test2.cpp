@@ -12,8 +12,8 @@
 // For CS 411 Fall 2018
 
 // Includes for code to be tested
-#include "build.hpp"      // For function build
-#include "build.hpp"      // Double inclusion test
+#include "old/build.hpp"      // For function build
+#include "old/build.hpp"      // Double inclusion test
 
 // Includes for testing package & code common to all test programs
 #include <iostream>     // for std::cout, std::endl, std::cin

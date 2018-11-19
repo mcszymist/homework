@@ -6,7 +6,8 @@ using std::endl;
 #include <utility>
 using std::pair;
 using std::make_pair;
-
+#include <cmath>
+using std::round;
 void cleanBridges(vector<Bridge> &stack){
     for(size_t i = 0;i<stack.size();i++){
         for(size_t ii = i;ii< stack.size();) {
@@ -25,15 +26,23 @@ void cleanBridges(vector<Bridge> &stack){
 void addNullified(vector<Bridge> &stack){
     for(size_t i = 0;i<stack.size();i++){
         int nullMax = 0;
+        int counter = 0;
         for(size_t ii = 0;ii< stack.size();ii++){
             if(!(i == ii)){
                 //nullified
                 if((stack[i][0] >= stack[ii][0] && stack[i][1] <= stack[ii][1]) || (stack[i][0] <= stack[ii][0] && stack[i][1] >= stack[ii][1])){
                     nullMax += stack[ii][2];
+                    counter++;
                 }
             }
         }
-        nullMax = stack[i][2] - nullMax;
+        if(counter != 0) {
+            nullMax = stack[i][2] - round(nullMax / counter);
+        }
+        else
+        {
+            nullMax = stack[i][2] - nullMax;
+        }
         stack[i].push_back(nullMax);
     }
 }
@@ -55,6 +64,9 @@ int build(int w, int e, const vector<Bridge> &bridges){
             if(holdMax < stack[i][3]){
                 holdMax = stack[i][3];
                 pos = i;
+            } else if(holdMax == stack[i][3] && stack[i][2] > stack[pos][2]){
+                holdMax = stack[i][3];
+                pos = i;
             }
         }
         if(pos == -1){
@@ -66,9 +78,12 @@ int build(int w, int e, const vector<Bridge> &bridges){
         for(size_t ii = 0;ii< stack.size();ii++){
             if(!(pos == ii)){
                 //nullified
-                if((stack[pos][0] >= stack[ii][0] && stack[pos][1] <= stack[ii][1]) 
-                || (stack[pos][0] <= stack[ii][0] && stack[pos][1] >= stack[ii][1])){
+                if((stack[pos][0] >= stack[ii][0] && stack[pos][1] <= stack[ii][1]) || (stack[pos][0] <= stack[ii][0] && stack[pos][1] >= stack[ii][1])){
                     stack.erase(stack.begin()+ii);
+                    if(pos >= ii){
+                        pos--;
+                    }
+                    ii--;
                 }
             }
         }

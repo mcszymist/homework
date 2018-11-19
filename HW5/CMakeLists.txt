@@ -6,7 +6,5 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
 include_directories(.)
 
 add_executable(HW5
-	build.cpp
-	build.hpp
 	build_test2.cpp
-        )
+		build.hpp)

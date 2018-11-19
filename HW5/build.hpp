@@ -2,10 +2,9 @@
 #define BUILD_HPP
 
 #include <vector>
-using std::vector;
 
-using Bridge = vector<int>;
+using Bridge = std::vector<int>;
 
-int build(int w, int e, const vector<Bridge> &bridges);
+int build(int w, int e, const std::vector<Bridge> &bridges);
 
 #endif
