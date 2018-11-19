@@ -4,6 +4,6 @@
 CMakeFiles/HW5.dir/build.cpp.obj: ../build.cpp
 CMakeFiles/HW5.dir/build.cpp.obj: ../build.hpp
 
-CMakeFiles/HW5.dir/build_test2.cpp.obj: ../build.hpp
 CMakeFiles/HW5.dir/build_test2.cpp.obj: ../build_test2.cpp
+CMakeFiles/HW5.dir/build_test2.cpp.obj: ../old/build.hpp
 

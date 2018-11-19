@@ -84,7 +84,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/mcszy/Desktop/HW/HW5/build.h">
+		<Unit filename="C:/Users/mcszy/Desktop/HW/HW5/build.cpp">
+			<Option target="HW5"/>
+		</Unit>
+		<Unit filename="C:/Users/mcszy/Desktop/HW/HW5/build.hpp">
 			<Option target="HW5"/>
 		</Unit>
 		<Unit filename="C:/Users/mcszy/Desktop/HW/HW5/build_test2.cpp">

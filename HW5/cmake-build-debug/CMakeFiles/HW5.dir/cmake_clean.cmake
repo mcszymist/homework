@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/HW5.dir/build_test2.cpp.obj"
+  "CMakeFiles/HW5.dir/build.cpp.obj"
   "HW5.pdb"
   "HW5.exe"
   "HW5.exe.manifest"

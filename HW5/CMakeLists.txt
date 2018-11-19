@@ -7,4 +7,4 @@ include_directories(.)
 
 add_executable(HW5
 	build_test2.cpp
-		build.hpp)
+		build.hpp build.cpp)

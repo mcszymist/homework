@@ -9,11 +9,9 @@
 C:/Users/mcszy/Desktop/HW/HW5/build.cpp
 build.hpp
 C:/Users/mcszy/Desktop/HW/HW5/build.hpp
-iostream
+vector
 -
-utility
--
-cmath
+algorithm
 -
 
 C:/Users/mcszy/Desktop/HW/HW5/build.hpp
