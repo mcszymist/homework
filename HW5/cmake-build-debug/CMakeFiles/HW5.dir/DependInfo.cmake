@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/mcszy/Desktop/HW/HW5/build.cpp" "C:/Users/mcszy/Desktop/HW/HW5/cmake-build-debug/CMakeFiles/HW5.dir/build.cpp.obj"
-  "C:/Users/mcszy/Desktop/HW/HW5/build_test2.cpp" "C:/Users/mcszy/Desktop/HW/HW5/cmake-build-debug/CMakeFiles/HW5.dir/build_test2.cpp.obj"
+  "/home/zym/Desktop/CS411/HW5/build.cpp" "/home/zym/Desktop/CS411/HW5/cmake-build-debug/CMakeFiles/HW5.dir/build.cpp.o"
+  "/home/zym/Desktop/CS411/HW5/build_test2.cpp" "/home/zym/Desktop/CS411/HW5/cmake-build-debug/CMakeFiles/HW5.dir/build_test2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

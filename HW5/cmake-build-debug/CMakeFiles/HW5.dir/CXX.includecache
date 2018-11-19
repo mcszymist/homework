@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/mcszy/Desktop/HW/HW5/build.cpp
+/home/zym/Desktop/CS411/HW5/build.cpp
 build.hpp
-C:/Users/mcszy/Desktop/HW/HW5/build.hpp
+/home/zym/Desktop/CS411/HW5/build.hpp
 vector
 -
 algorithm
 -
 
-C:/Users/mcszy/Desktop/HW/HW5/build.hpp
+/home/zym/Desktop/CS411/HW5/build.hpp
 vector
 -
 

@@ -38,18 +38,24 @@ vector<Bridge> validBridges(Bridge selected,const vector<Bridge> &bridges){
     }
     return valid;
 }
-int recurse(const vector<Bridge> &bridges){
+
+int recurse(vector<Bridge> &bridges){
     if(bridges.size()==0){
         return 0;
     } else if(bridges.size()==1){
         return bridges[0][2];
     }
     int max = 0;
-    for(auto i : bridges){
-
-        auto temp = validBridges(i,bridges);
-        int hold = recurse(temp);
-        hold += i[2];
+    int hold = 0;
+    for(auto &i : bridges){
+        if(i.size() == 4){
+            hold = i[3];
+        } else {
+            auto temp = validBridges(i, bridges);
+            hold = recurse(temp);
+            hold += i[2];
+            i.push_back(hold);
+        }
         if(max < hold){
             max = hold;
         }
@@ -60,8 +66,10 @@ int recurse(const vector<Bridge> &bridges){
 
 int build(int w, int e, const vector<Bridge> &bridges){
     auto allBridges = bridges;
+
     sort(allBridges.begin(),allBridges.end(),compare);
     removeDups(allBridges);
+
     return recurse(allBridges);
 
 };
