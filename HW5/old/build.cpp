@@ -28,7 +28,7 @@ void addNullified(vector<Bridge> &stack){
         int nullMax = 0;
         int counter = 0;
         for(size_t ii = 0;ii< stack.size();ii++){
-            if(!(i == ii)){
+            if(i != ii){
                 //nullified
                 if((stack[i][0] >= stack[ii][0] && stack[i][1] <= stack[ii][1]) || (stack[i][0] <= stack[ii][0] && stack[i][1] >= stack[ii][1])){
                     nullMax += stack[ii][2];
@@ -76,7 +76,7 @@ int build(int w, int e, const vector<Bridge> &bridges){
 
         //remove nullified bridges
         for(size_t ii = 0;ii< stack.size();ii++){
-            if(!(pos == ii)){
+            if(pos != ii){
                 //nullified
                 if((stack[pos][0] >= stack[ii][0] && stack[pos][1] <= stack[ii][1]) || (stack[pos][0] <= stack[ii][0] && stack[pos][1] >= stack[ii][1])){
                     stack.erase(stack.begin()+ii);

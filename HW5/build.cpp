@@ -1,13 +1,16 @@
-//
-// Created by mcszy on 11/18/2018.
-//
+// build.cpp
+// City to City Max Toll
+// By Tyler J Roberts
+// For CS411 HW5
+
 #include "build.hpp"
 #include <vector>
 using std::vector;
 #include <algorithm>
 using std::sort;
 
-bool compare(Bridge &a, Bridge &b){
+//compare to sort bridges with west then sort same west bridges by east
+const bool compare(const Bridge &a,const Bridge &b){
     if(a[0] == b[0]){
         return a[1] < b[1];
     }
@@ -15,6 +18,8 @@ bool compare(Bridge &a, Bridge &b){
         return a[0] < b[0];
     }
 }
+
+// remove duplicate bridges and replace with the better value
 void removeDups(vector<Bridge> &bridges){
     for(auto i = 1; i < bridges.size();i++){
         if(bridges[i-1][0] == bridges[i][0] && bridges[i-1][1] == bridges[i][1]){
@@ -28,19 +33,27 @@ void removeDups(vector<Bridge> &bridges){
         }
     }
 }
+// pushing the position into the bridges for its location in the data vector
+void engageDataLoc(vector<Bridge> &bridges){
+    for(size_t i = 0; i < bridges.size();i++){
+        bridges[i].push_back(i);
+    }
+}
 
-vector<Bridge> validBridges(Bridge selected,const vector<Bridge> &bridges){
+// returns the valid bridges for the selected bridge out of the list.
+vector<Bridge> validBridges(const Bridge &selected,const vector<Bridge> &bridges){
     vector<Bridge> valid{};
     for(size_t ii = 0;ii< bridges.size();ii++){
-        if(!((selected[0] >= bridges[ii][0] && selected[1] <= bridges[ii][1]) || (selected[0] <= bridges[ii][0] && selected[1] >= bridges[ii][1]))){
+        if(!((selected[0] >= bridges[ii][0] && selected[1] <= bridges[ii][1]) || (selected[0] <= bridges[ii][0] && selected[1] >= bridges[ii][1]) || (selected[0] >= bridges[ii][0] && selected[1] >= bridges[ii][1]))){
             valid.push_back(bridges[ii]);
         }
     }
     return valid;
 }
 
-int recurse(vector<Bridge> &bridges){
-    if(bridges.size()==0){
+// recursive function to find the maximum tool
+int recurse(const vector<Bridge> &bridges,vector<int> &data){
+    if(bridges.empty()){
         return 0;
     } else if(bridges.size()==1){
         return bridges[0][2];
@@ -48,13 +61,13 @@ int recurse(vector<Bridge> &bridges){
     int max = 0;
     int hold = 0;
     for(auto &i : bridges){
-        if(i.size() == 4){
-            hold = i[3];
+        if(data[i[3]] != -1){
+            hold = data[i[3]];
         } else {
             auto temp = validBridges(i, bridges);
-            hold = recurse(temp);
+            hold = recurse(temp,data);
             hold += i[2];
-            i.push_back(hold);
+            data[i[3]] = hold;
         }
         if(max < hold){
             max = hold;
@@ -64,12 +77,13 @@ int recurse(vector<Bridge> &bridges){
     return max;
 }
 
+//setup to recurse
 int build(int w, int e, const vector<Bridge> &bridges){
     auto allBridges = bridges;
 
     sort(allBridges.begin(),allBridges.end(),compare);
     removeDups(allBridges);
-
-    return recurse(allBridges);
-
+    engageDataLoc(allBridges);
+    vector<int> data(allBridges.size(),-1);
+    return recurse(allBridges,data);
 };
