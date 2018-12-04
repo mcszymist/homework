@@ -15,6 +15,14 @@
 
 #include <string>
 #include <unordered_map>
+#include <memory>
+
+struct Node {
+    char _c=0;
+    int _weight=0;
+    std::shared_ptr<Node> _left=nullptr;
+    std::shared_ptr<Node> _right=nullptr;
+};
 
 // Class HuffCode
 // Encoding & decoding using a Huffman code
@@ -33,12 +41,13 @@ public:
     std::string encode(const std::string & text) const;
 
     std::string decode(const std::string & codestr) const;
-
 // ***** HuffCode: data members *****
 private:
-
+    std::shared_ptr<Node> _tree;
+    std::unordered_map<char,std::string> _codewords;
+    // ***** HuffCode: private member functions *****
+    void findCodeWords(std::shared_ptr<Node> node, const std::string &word);
 };  // End class HuffCode
-
 
 #endif //#ifndef FILE_HUFFCODE_H_INCLUDED
 
